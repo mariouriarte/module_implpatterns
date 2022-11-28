@@ -1,1 +1,8 @@
 .idea/
+/kudos/.idea
+/kudos/.mvn
+/kudos/target
+
+!/kudos/kudos.iml
+!/kudos/mvnw.cmd
+!/kudos/mvnw
