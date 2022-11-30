@@ -52,11 +52,11 @@ COPY docker/php/php.ini /usr/local/etc/php/php.ini
 RUN apk --no-cache add shadow
 
 # xdebug extensions
-RUN pecl install xdebug \
-    && docker-php-ext-enable xdebug
+#RUN pecl install xdebug \
+#    && docker-php-ext-enable xdebug
 
 # Config XDEBUG
-COPY docker/php/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+#COPY docker/php/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
 # change port php-fpm
 RUN sed -i 's/9000/30001/' /usr/local/etc/php-fpm.d/zz-docker.conf
@@ -72,3 +72,6 @@ USER root
 RUN mkdir -p /appdata/www
 WORKDIR /appdata/www
 RUN usermod -a -G www-data appuser
+
+#USER appuser
+#RUN cd /appdata/wwww && composer install
