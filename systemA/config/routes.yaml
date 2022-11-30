@@ -1,3 +1,13 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
+    prefix: v1
+
+#controllers:
+#    resource: ../src/Api/Action
+#    type: annotation
+#    prefix: v1
+
+#employee:
+#    resource: 'routes/employee.yml'
+#    prefix: 'employee'

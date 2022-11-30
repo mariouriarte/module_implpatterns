@@ -1,0 +1,4 @@
+create_employee:
+  path: /create
+  controller: App\Controller\Employee\CreateEmployeeController
+  methods: [POST]

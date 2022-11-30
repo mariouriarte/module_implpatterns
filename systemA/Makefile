@@ -26,5 +26,6 @@ bash: ## bash into the be container
 logs: ## Show Symfony logs in real time
 	userid=${UID} docker exec -it --user ${UID} ${DOCKER_BE} symfony server:log
 
-composer-install: # Installs composer dependencies
+install: ## Installs composer dependencies
 	userid=${UID} docker exec --user ${UID} ${DOCKER_BE} composer install --no-interaction
+	userid=${UID} docker exec --user ${UID} ${DOCKER_BE} ./scripts/doctrine-drop-update-fill.sh
