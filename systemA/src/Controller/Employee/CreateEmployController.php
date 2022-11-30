@@ -9,12 +9,14 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\SerializerInterface;
 
 /** @Route("/employee") */
 class CreateEmployController extends AbstractController
 {
     public function __construct(
-        private readonly CreateEmploy $createEmploy
+        private readonly CreateEmploy $createEmploy,
+        private readonly SerializerInterface $serializer
     ) {
     }
 
@@ -33,8 +35,8 @@ class CreateEmployController extends AbstractController
             apellido_3: $data['apellido_3'],
         );
 
-        $employ = $this->createEmploy->execute($input);
+        $dto = $this->createEmploy->execute($input);
 
-        return new JsonResponse($employ, Response::HTTP_CREATED);
+        return new JsonResponse($this->serializer->serialize($dto, 'json'), Response::HTTP_CREATED, [], true);
     }
 }

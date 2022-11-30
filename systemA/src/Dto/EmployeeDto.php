@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Service\Employ\Dto;
+namespace App\Dto;
 
-class EmployDto
+class EmployeeDto
 {
     public function __construct(
         public readonly string $nombres,
