@@ -24,13 +24,24 @@ class EmployRepository extends ServiceEntityRepository
 
     public function findOneByNickname(string $nickname): Employ
     {
-        $employ = $this->findOneBy(['nickname' => $nickname]);
+        $employee = $this->findOneBy(['nickname' => $nickname]);
 
-        if (null ===  $employ) {
+        if (null ===  $employee) {
             throw EmployNotFoundException::fromNickname($nickname);
         }
 
-        return $employ;
+        return $employee;
+    }
+
+    public function findOneById(string $id): Employ
+    {
+        $employee = $this->find($id);
+
+        if (null ===  $employee) {
+            throw EmployNotFoundException::fromId($id);
+        }
+
+        return $employee;
     }
 
     public function save(Employ $entity, bool $flush = true): void

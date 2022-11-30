@@ -52,8 +52,7 @@ COPY docker/php/php.ini /usr/local/etc/php/php.ini
 RUN apk --no-cache add shadow
 
 # xdebug extensions
-#RUN pecl install xdebug \
-#    && docker-php-ext-enable xdebug
+#RUN pecl install xdebug && docker-php-ext-enable xdebug
 
 # Config XDEBUG
 #COPY docker/php/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini

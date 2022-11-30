@@ -2,7 +2,7 @@
 
 namespace App\Controller\Employee;
 
-use App\Service\Employ\CreateEmploy;
+use App\Service\Employ\CreateEmployee;
 use App\Service\Employ\ValueObject\CreateEmployInput;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -12,10 +12,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
 
 /** @Route("/employee") */
-class CreateEmployController extends AbstractController
+class CreateEmployeeController extends AbstractController
 {
     public function __construct(
-        private readonly CreateEmploy $createEmploy,
+        private readonly CreateEmployee $createEmployee,
         private readonly SerializerInterface $serializer
     ) {
     }
@@ -35,7 +35,7 @@ class CreateEmployController extends AbstractController
             apellido_3: $data['apellido_3'],
         );
 
-        $dto = $this->createEmploy->execute($input);
+        $dto = $this->createEmployee->execute($input);
 
         return new JsonResponse($this->serializer->serialize($dto, 'json'), Response::HTTP_CREATED, [], true);
     }

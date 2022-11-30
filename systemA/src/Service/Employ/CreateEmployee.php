@@ -8,7 +8,7 @@ use App\Entity\Employ;
 use App\Repository\EmployRepository;
 use App\Service\Employ\ValueObject\CreateEmployInput;
 
-class CreateEmploy
+class CreateEmployee
 {
     public function __construct(
         private readonly EmployRepository $repository,
