@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Service\Employ\ValueObject;
+namespace App\Service\Employee\ValueObject;
 
-class CreateEmployInput
+class CreateEmployeeInput
 {
     public function __construct(
         public readonly string $nombres,

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Service\Employ\Exception;
+namespace App\Service\Employee\Exception;
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class EmployNotFoundException extends NotFoundHttpException
+class EmployeeNotFoundException extends NotFoundHttpException
 {
     private const MESSAGE = 'Employ with nickname %s not found';
     private const MESSAGE_ID = 'Employ with ID %s not found';

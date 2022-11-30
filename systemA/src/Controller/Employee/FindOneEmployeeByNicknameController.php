@@ -2,7 +2,7 @@
 
 namespace App\Controller\Employee;
 
-use App\Service\Employ\FindOneEmployeeByNickname;
+use App\Service\Employee\FindOneEmployeeByNickname;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

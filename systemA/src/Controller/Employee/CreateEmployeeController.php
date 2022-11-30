@@ -2,8 +2,8 @@
 
 namespace App\Controller\Employee;
 
-use App\Service\Employ\CreateEmployee;
-use App\Service\Employ\ValueObject\CreateEmployInput;
+use App\Service\Employee\CreateEmployee;
+use App\Service\Employee\ValueObject\CreateEmployeeInput;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -27,7 +27,7 @@ class CreateEmployeeController extends AbstractController
     {
         $data = json_decode($request->getContent(), true);
 
-        $input = new CreateEmployInput(
+        $input = new CreateEmployeeInput(
             nombres: $data['nombres'],
             apellido_1: $data['apellido_1'],
             nickname: $data['nickname'],

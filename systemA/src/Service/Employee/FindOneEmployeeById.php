@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Service\Employ;
+namespace App\Service\Employee;
 
 use App\Dto\EmployeeDto;
 use App\Dto\Transformer\EmployeeTransformerDto;
-use App\Repository\EmployRepository;
+use App\Repository\EmployeeRepository;
 
 class FindOneEmployeeById
 {
     public function __construct(
-        private readonly EmployRepository $repository,
+        private readonly EmployeeRepository $repository,
         private readonly EmployeeTransformerDto $transformerDto
     ) {
     }

@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use Symfony\Component\Uid\Uuid;
 
-class Employ
+class Employee
 {
     private ?string $nombres = null;
 

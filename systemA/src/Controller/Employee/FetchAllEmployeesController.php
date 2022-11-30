@@ -2,7 +2,7 @@
 
 namespace App\Controller\Employee;
 
-use App\Service\Employ\FetchAllEmployees;
+use App\Service\Employee\FetchAllEmployees;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;

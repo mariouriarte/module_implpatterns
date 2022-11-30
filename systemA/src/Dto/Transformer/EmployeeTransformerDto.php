@@ -3,12 +3,12 @@
 namespace App\Dto\Transformer;
 
 use App\Dto\EmployeeDto;
-use App\Entity\Employ;
+use App\Entity\Employee;
 
 class EmployeeTransformerDto extends AbstractResponseDtoTransformer
 {
     /**
-     * @param Employ $object
+     * @param Employee $object
      *
      * @return EmployeeDto
      */

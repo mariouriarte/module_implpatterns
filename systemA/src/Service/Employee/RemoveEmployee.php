@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Service\Employ;
+namespace App\Service\Employee;
 
-use App\Repository\EmployRepository;
+use App\Repository\EmployeeRepository;
 
 class RemoveEmployee
 {
     public function __construct(
-        private readonly EmployRepository $repository,
+        private readonly EmployeeRepository $repository,
     ) {
     }
 
