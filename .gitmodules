@@ -1,0 +1,4 @@
+[submodule "kudos"]
+	path = kudos
+	url = https://github.com/Trebor006/kudos.git
+    branch = master
