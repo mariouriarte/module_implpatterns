@@ -29,3 +29,6 @@ logs: ## Show Symfony logs in real time
 install: ## Installs composer dependencies
 	userid=${UID} docker exec --user ${UID} ${DOCKER_BE} composer install --no-interaction
 	userid=${UID} docker exec --user ${UID} ${DOCKER_BE} ./scripts/doctrine-drop-update-fill.sh
+
+db-update: ## Installs composer dependencies
+	userid=${UID} docker exec --user ${UID} ${DOCKER_BE} ./scripts/doctrine-drop-update-fill.sh

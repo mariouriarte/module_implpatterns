@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
+    <entity name="App\Entity\RequestBuilding" repository-class="App\Repository\RequestBuildingRepository">
+        <id name="id" type="integer">
+            <generator strategy="IDENTITY"/>
+        </id>
+
+        <field name="title" length="250"/>
+        <field name="requestState" length="250"/>
+        <field name="requestDate" type="datetime"/>
+        <field name="description" length="150"/>
+
+        <field name="idWarehouse" type="integer"/>
+    </entity>
+</doctrine-mapping>

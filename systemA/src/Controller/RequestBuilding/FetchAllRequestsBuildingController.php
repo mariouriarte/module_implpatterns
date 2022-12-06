@@ -1,22 +1,21 @@
 <?php
 
-namespace App\Controller\Employee;
+namespace App\Controller\RequestBuilding;
 
-use App\Service\Employee\FetchAllEmployees;
+use App\Service\RequestBuilding\FetchAllRequestsBuilding;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
 
-/** @Route("/employee") */
-class FetchAllEmployeesController extends AbstractController
+/** @Route("/solicitud") */
+class FetchAllRequestsBuildingController extends AbstractController
 {
     public function __construct(
-        private readonly FetchAllEmployees $fetchAllEmployees,
+        private readonly FetchAllRequestsBuilding $fetchAllEmployees,
         private readonly SerializerInterface $serializer
-    )
-    {
+    ) {
     }
 
     /** @Route("/", name="fetch_all_employee", methods={"GET"}) */

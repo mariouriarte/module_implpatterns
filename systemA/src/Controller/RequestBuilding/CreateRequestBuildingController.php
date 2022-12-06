@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Controller\Employee;
+namespace App\Controller\RequestBuilding;
 
-use App\Service\Employee\CreateEmployee;
-use App\Service\Employee\ValueObject\CreateEmployeeInput;
+use App\Service\RequestBuilding\CreateRequestBuilding;
+use App\Service\RequestBuilding\ValueObject\CreateRequestBuildingInput;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -11,28 +11,26 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
 
-/** @Route("/employee") */
-class CreateEmployeeController extends AbstractController
+/** @Route("/solicitud") */
+class CreateRequestBuildingController extends AbstractController
 {
     public function __construct(
-        private readonly CreateEmployee $createEmployee,
+        private readonly CreateRequestBuilding $createEmployee,
         private readonly SerializerInterface $serializer
     ) {
     }
 
     /**
-     * @Route("/", name="create_employee", methods={"POST"})
+     * @Route("/almacenId/{almacenId}", name="create_employee", methods={"POST"})
      */
-    public function __invoke(Request $request): Response
+    public function __invoke(Request $request, int $almacenId): Response
     {
         $data = json_decode($request->getContent(), true);
 
-        $input = new CreateEmployeeInput(
-            nombres: $data['nombres'],
-            apellido_1: $data['apellido_1'],
-            nickname: $data['nickname'],
-            apellido_2: $data['apellido_2'],
-            apellido_3: $data['apellido_3'],
+        $input = new CreateRequestBuildingInput(
+            title: $data['titulo'],
+            description: $data['descripcion'],
+            idWarehouse: $almacenId
         );
 
         $dto = $this->createEmployee->execute($input);
