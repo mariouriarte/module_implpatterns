@@ -21,16 +21,16 @@ class CreateRequestBuildingController extends AbstractController
     }
 
     /**
-     * @Route("/almacenId/{almacenId}", name="create_employee", methods={"POST"})
+     * @Route("/", name="create_employee", methods={"POST"})
      */
-    public function __invoke(Request $request, int $almacenId): Response
+    public function __invoke(Request $request): Response
     {
         $data = json_decode($request->getContent(), true);
 
         $input = new CreateRequestBuildingInput(
             title: $data['titulo'],
             description: $data['descripcion'],
-            idWarehouse: $almacenId
+            idWarehouse: 1
         );
 
         $dto = $this->createEmployee->execute($input);
