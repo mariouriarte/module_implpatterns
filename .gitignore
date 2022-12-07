@@ -21,10 +21,10 @@
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
 
-/kudos/.idea
-/kudos/.mvn
-/kudos/target
+/almacen/.idea
+/almacen/.mvn
+/almacen/target
 
-!/kudos/kudos.iml
-!/kudos/mvnw.cmd
-!/kudos/mvnw
+!/almacen/kudos.iml
+!/almacen/mvnw.cmd
+!/almacen/mvnw
