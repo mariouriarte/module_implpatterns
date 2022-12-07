@@ -1,4 +1,4 @@
-[submodule "kudos"]
-	path = kudos
-	url = https://github.com/Trebor006/kudos.git
+[submodule "almacen"]
+	path = almacen
+	url = https://github.com/Trebor006/almacen.git
     branch = master
