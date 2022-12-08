@@ -13,7 +13,7 @@ class HttpClientWarehouse
         $httpClient = HttpClient::create();
 
         try {
-            $response = $httpClient->request('POST', 'localhost:7001/generateRequest', [
+            $response = $httpClient->request('POST', 'http://25.4.246.193:7001/generateRequest', [
                 'json' => ['id' => $idRequest]
             ]);
         } catch (TransportExceptionInterface) {
@@ -21,7 +21,7 @@ class HttpClientWarehouse
         }
         $content = $response->toArray();
 
-        return $content['id_almacen'];
+        return $content['id'];
     }
 
 }
