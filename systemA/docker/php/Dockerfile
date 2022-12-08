@@ -43,9 +43,9 @@ RUN pecl install pcov && docker-php-ext-enable pcov
 # Install opcache
 RUN docker-php-ext-install opcache
 
-# Install and update composer
+# Install and updater composer
 RUN curl https://getcomposer.org/composer.phar -o /usr/bin/composer && chmod +x /usr/bin/composer \
-    && composer self-update
+    && composer self-updater
 
 COPY docker/php/php.ini /usr/local/etc/php/php.ini
 

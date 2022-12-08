@@ -15,7 +15,7 @@ class RequestBuildingTransformerDto extends AbstractResponseDtoTransformer
     public function transformFromObject($object): RequestBuildingDto
     {
         return new RequestBuildingDto(
-            idSolicutd: $object->getId(),
+            idSolicitud: $object->getId(),
             titulo: $object->getTitle(),
             descripcion: $object->getDescription(),
             estadoSolicitud: $object->getRequestState(),

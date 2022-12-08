@@ -43,6 +43,7 @@ class CreateRequestBuilding
     {
         $httpClientWarehouse = new HttpClientWarehouse();
         $warehouseId = $httpClientWarehouse->__invoke($requestBuilding->getId());
+
         $requestBuilding->setIdWarehouse($warehouseId);
         $this->repository->save($requestBuilding);
     }

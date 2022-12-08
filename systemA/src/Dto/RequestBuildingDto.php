@@ -5,7 +5,7 @@ namespace App\Dto;
 class RequestBuildingDto
 {
     public function __construct(
-        public readonly int $idSolicutd,
+        public readonly int $idSolicitud,
         public readonly string $titulo,
         public readonly string $descripcion,
         public readonly string $estadoSolicitud,
