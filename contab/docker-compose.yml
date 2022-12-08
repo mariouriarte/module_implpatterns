@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+
+  postgres:
+    image: postgres:13.5
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=contabilidad
+    volumes:
+      - contabilidad-postgresdb:/var/lib/postgresql/data
+    ports:
+      - '5437:5432'
+
+volumes:
+  contabilidad-postgresdb:
