@@ -17,18 +17,18 @@ export class ComprobantesController {
     return this.comprobantesService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.comprobantesService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateComprobanteDto: UpdateComprobanteDto) {
-    return this.comprobantesService.update(+id, updateComprobanteDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.comprobantesService.remove(+id);
-  }
+  // @Get(':id')
+  // findOne(@Param('id') id: string) {
+  //   return this.comprobantesService.findOne(+id);
+  // }
+  //
+  // @Patch(':id')
+  // update(@Param('id') id: string, @Body() updateComprobanteDto: UpdateComprobanteDto) {
+  //   return this.comprobantesService.update(+id, updateComprobanteDto);
+  // }
+  //
+  // @Delete(':id')
+  // remove(@Param('id') id: string) {
+  //   return this.comprobantesService.remove(+id);
+  // }
 }
